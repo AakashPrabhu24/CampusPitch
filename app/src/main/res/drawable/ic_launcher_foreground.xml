@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- 1. Flame Thrust Exhaust (Cyan to Emerald Glow) -->
+    <path
+        android:pathData="M48,68 L54,84 L60,68 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="54"
+                android:startY="68"
+                android:endX="54"
+                android:endY="84"
+                android:type="linear">
+                <item android:color="#FF06B6D4" android:offset="0.0" />
+                <item android:color="#0010B981" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Inner Flame Core (Bright White) -->
+    <path
+        android:pathData="M51,68 L54,78 L57,68 Z"
+        android:fillColor="#FFFFFFFF" />
+
+    <!-- 2. Left 'W' Wing (Emerald Green Gradient) -->
+    <path
+        android:pathData="M50,48 L32,66 L35,72 L46,67 L50,70 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="32"
+                android:startY="66"
+                android:endX="50"
+                android:endY="50"
+                android:type="linear">
+                <item android:color="#FF059669" android:offset="0.0" />
+                <item android:color="#FF10B981" android:offset="0.6" />
+                <item android:color="#FF34D399" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Left Wing Upper Highlight -->
+    <path
+        android:pathData="M50,48 L32,66 L42,61 Z"
+        android:fillColor="#50FFFFFF" />
+
+    <!-- 3. Right 'W' Wing (Electric Cyan Gradient) -->
+    <path
+        android:pathData="M58,48 L76,66 L73,72 L62,67 L58,70 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="76"
+                android:startY="66"
+                android:endX="58"
+                android:endY="50"
+                android:type="linear">
+                <item android:color="#FF0891B2" android:offset="0.0" />
+                <item android:color="#FF06B6D4" android:offset="0.6" />
+                <item android:color="#FF22D3EE" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Right Wing Upper Highlight -->
+    <path
+        android:pathData="M58,48 L76,66 L66,61 Z"
+        android:fillColor="#50FFFFFF" />
+
+    <!-- 4. Central Venture Rocket Fuselage (Pearl White & Silver) -->
+    <path
+        android:pathData="M54,28 L62,50 L60,70 L54,67 L48,70 L46,50 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="46"
+                android:startY="28"
+                android:endX="62"
+                android:endY="70"
+                android:type="linear">
+                <item android:color="#FFFFFFFF" android:offset="0.0" />
+                <item android:color="#FFE2E8F0" android:offset="0.7" />
+                <item android:color="#FFCBD5E1" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Fuselage Left Shading (Emerald Hue) -->
+    <path
+        android:pathData="M54,28 L46,50 L48,70 L54,67 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="46"
+                android:startY="50"
+                android:endX="54"
+                android:endY="50"
+                android:type="linear">
+                <item android:color="#3010B981" android:offset="0.0" />
+                <item android:color="#0010B981" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Fuselage Right Shading (Cyan Hue) -->
+    <path
+        android:pathData="M54,28 L62,50 L60,70 L54,67 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="62"
+                android:startY="50"
+                android:endX="54"
+                android:endY="50"
+                android:type="linear">
+                <item android:color="#3006B6D4" android:offset="0.0" />
+                <item android:color="#0006B6D4" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Center Aerodynamic Ridge Line -->
+    <path
+        android:pathData="M54,28 L54,67"
+        android:strokeColor="#FF10B981"
+        android:strokeWidth="1.2" />
+
+    <!-- 5. Central Pitch Diamond Jewel (Tech Core) -->
+    <path
+        android:pathData="M54,46 L58,52 L54,58 L50,52 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="50"
+                android:startY="46"
+                android:endX="58"
+                android:endY="58"
+                android:type="linear">
+                <item android:color="#FF34D399" android:offset="0.0" />
+                <item android:color="#FF059669" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- Core Center Specular Point -->
+    <path
+        android:pathData="M53,51 L55,51 L55,53 L53,53 Z"
+        android:fillColor="#FFFFFFFF" />
+
+    <!-- 6. Golden Venture Star at Apex -->
+    <path
+        android:pathData="M54,22 L55.5,25.5 L59,27 L55.5,28.5 L54,32 L52.5,28.5 L49,27 L52.5,25.5 Z"
+        android:fillColor="#FFFBBF24" />
+    <path
+        android:pathData="M53.5,26.5 L54.5,26.5 L54.5,27.5 L53.5,27.5 Z"
+        android:fillColor="#FFFFFFFF" />
+</vector>
