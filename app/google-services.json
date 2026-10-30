@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "304963557913",
+    "project_id": "campuspitch-childchiller",
+    "storage_bucket": "campuspitch-childchiller.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304963557913:android:9d2ebdb508f2dc2cbfe888",
+        "android_client_info": {
+          "package_name": "com.childchiller.campuspitch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmV7VcAnBHGA9_TJ-fUU5qxoWA-SxBYMk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304963557913:android:9d2ebdb508f2dc2cbfe888",
+        "android_client_info": {
+          "package_name": "com.childchiller.campuspitch.debug"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmV7VcAnBHGA9_TJ-fUU5qxoWA-SxBYMk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

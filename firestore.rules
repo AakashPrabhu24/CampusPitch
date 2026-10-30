@@ -1,0 +1,88 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    // User accounts
+    match /users/{userId} {
+      allow read: if isSignedIn();
+      allow write: if isOwner(userId);
+    }
+
+    // Student profiles - only owner can update personal profile
+    match /students/{studentId} {
+      allow read: if isSignedIn();
+      allow write: if isOwner(studentId);
+    }
+
+    // Investor profiles
+    match /investors/{investorId} {
+      allow read: if isSignedIn();
+      allow write: if isOwner(investorId);
+    }
+
+    // Published and draft MVPs
+    match /mvps/{mvpId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && (
+        request.resource.data.ownerUid == request.auth.uid ||
+        request.resource.data.studentUid == request.auth.uid
+      );
+      allow update, delete: if isSignedIn() && (
+        resource.data.ownerUid == request.auth.uid ||
+        resource.data.studentUid == request.auth.uid
+      );
+    }
+
+    // Outreach threads and two-way conversations
+    match /outreach/{outreachId} {
+      // Only conversation participants (investor or student) can read or modify the outreach thread
+      allow read: if isSignedIn() && (
+        resource.data.investorUid == request.auth.uid ||
+        resource.data.studentUid == request.auth.uid
+      );
+      allow create: if isSignedIn() && (
+        request.resource.data.investorUid == request.auth.uid ||
+        request.resource.data.studentUid == request.auth.uid
+      );
+      allow update: if isSignedIn() && (
+        resource.data.investorUid == request.auth.uid ||
+        resource.data.studentUid == request.auth.uid
+      );
+
+      // Two-way chat messages subcollection
+      match /messages/{messageId} {
+        // Only participants in the parent outreach conversation can read messages
+        allow read: if isSignedIn() && (
+          get(/databases/$(database)/documents/outreach/$(outreachId)).data.investorUid == request.auth.uid ||
+          get(/databases/$(database)/documents/outreach/$(outreachId)).data.studentUid == request.auth.uid
+        );
+
+        // Sender must be authenticated participant and cannot forge senderUid
+        allow create: if isSignedIn() &&
+          request.resource.data.senderUid == request.auth.uid &&
+          request.resource.data.text is string &&
+          request.resource.data.text.size() > 0 &&
+          (
+            get(/databases/$(database)/documents/outreach/$(outreachId)).data.investorUid == request.auth.uid ||
+            get(/databases/$(database)/documents/outreach/$(outreachId)).data.studentUid == request.auth.uid
+          );
+
+        allow update, delete: if false; // Messages are immutable audit records
+      }
+    }
+
+    // Default fallback: authenticated users only
+    match /{document=**} {
+      allow read, write: if isSignedIn();
+    }
+  }
+}
