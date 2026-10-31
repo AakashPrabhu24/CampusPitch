@@ -1,0 +1,142 @@
+================================================================================
+CHILD CHILLER VENTURES: CAMPUSPITCH - DEVELOPER & EVALUATOR TESTING GUIDE
+================================================================================
+Application: Child Chiller Ventures - CampusPitch (Android)
+Build Version: 1.0.6 (versionCode 7)
+Latest APK: CampusPitch-Debug-v1.0.6.apk (26.4 MB)
+Mandatory Copyright: "2026 copyright Child Chiller Ventures"
+Architecture: Jetpack Compose, Gemini AI Agent, Firebase Auth & Firestore Central Data Lake
+================================================================================
+TEST SCENARIO 1: STUDENT FOUNDER VOICE & NATURAL LANGUAGE PITCH
+================================================================================
+1. On the main Role Gate screen, select the "Student Founder" tab.
+2. Sign in or register with any student email (e.g. student@iitb.ac.in / Password123!),
+   or tap the pre-filled demo login.
+3. You will land on the "Student Founder Studio".
+
+4. Pitch Intake (Voice or Natural Text):
+   - Option A (Voice): Tap the large Mic button (allow microphone permission if prompted)
+     and speak your pitch naturally.
+   - Option B (Text Input): In the bottom text field, copy and paste this sentence:
+
+     "I want to upload an app called MediCare. It manages hospitals and is looking for an investment of 2 crore."
+
+     Then tap the Send (arrow) button.
+
+5. Verify AI Extraction & Confirmation Card:
+   - Within 1-2 seconds, the green-bordered card titled "Did I get this right?" appears:
+       * App Name: MediCare
+       * Description: It manages hospitals
+       * Sector: Healthcare / SaaS
+       * Stage: MVP
+       * Seeking Investment: Rs 2,00,00,000 (correctly formatted from "2 crore")
+
+6. Confirm & Upload:
+   - Tap the green button: [✓] Confirm & Upload
+   - A success notification confirms: "MediCare published to Central Data Lake!"
+   - The card appears under "Your Published MVPs" with real-time sync.
+
+
+================================================================================
+TEST SCENARIO 2: ONE-CLICK GITHUB REPOSITORY IMPORT
+================================================================================
+1. On the Student Founder Studio, find the buttons below the input card.
+2. Tap "Import GitHub".
+3. A dedicated dialog window "Import GitHub Repository" opens immediately.
+4. Choose either:
+   - One-Tap Demo: Tap the [medicare] chip (pre-fills "childchiller/medicare"), OR
+   - Custom Repo: Type any public repo (e.g., torvalds/linux or square/retrofit).
+5. Tap "Import Now".
+6. The green-bordered "Did I get this right?" card appears with the repo name,
+   tech stack description, and an initial target raise (Rs 25,00,000).
+7. Tap [✓] Confirm & Upload to publish it to Firestore.
+
+
+================================================================================
+TEST SCENARIO 3: EDIT PITCH TARGET RAISE LIVE
+================================================================================
+1. Under "Your Published MVPs", locate any uploaded card.
+2. Tap the Edit (pencil) icon next to the raise amount.
+3. Type a new value, such as:
+       1.5 cr   OR   50 lakh
+4. Tap "Save Live".
+5. The target raise updates instantly in Indian Rupee format across the Central Data Lake.
+
+
+================================================================================
+TEST SCENARIO 4: INVESTOR VOICE / TEXT REGISTRATION
+================================================================================
+1. Sign out of the Student screen using the logout icon in the top right.
+2. On the Role Gate screen, select the "Verified Investor" tab.
+3. Tap "Register New Fund".
+4. Speak or paste this verified corporate registration sentence into the text box:
+
+   "I am registering Pintu Capital, an AIF Category I fund. Our corporate email is partner@pintucapital.com, phone number is 9876543210 and website is www.pintucapital.com"
+
+5. Verify that Gemini extracts all fields automatically:
+   - Fund Name: Pintu Capital
+   - Corporate Email: partner@pintucapital.com (matches pintucapital.com domain)
+   - Mobile: 9876543210 (valid 10-digit Indian number starting with 6-9)
+   - Category: AIF Category I
+6. Enter a password (e.g. Password123!) and submit registration.
+
+
+================================================================================
+TEST SCENARIO 5: PLATFORM ADMIN INSTANT APPROVAL
+================================================================================
+1. Return to the Role Gate screen and select the "Admin" tab.
+2. Sign in with Admin credentials:
+   - Email: admin@childchiller.com
+   - Password: Admin@2026
+3. Under "Pending Investor Applications", find "Pintu Capital".
+4. Tap [✓] Approve Investor.
+5. The investor is approved instantly in Firestore.
+
+
+================================================================================
+TEST SCENARIO 6: INVESTOR DEAL SOURCING & STUDENT OUTREACH
+================================================================================
+1. Return to Role Gate, select "Verified Investor", and sign in as:
+   partner@pintucapital.com / Password123!
+2. On the Investor Studio:
+   - Filter startups by sector chips (e.g. AI, SaaS, Healthcare).
+   - Find the "MediCare" startup uploaded in Scenario 1.
+3. Tap "Review Pitch" to inspect the summary, tech stack, and links.
+4. Tap "Send Outreach Inquiry".
+5. Enter a message (e.g. "We would like to lead your seed round. Let us connect.")
+   and tap Submit.
+6. Switch to the "Pipeline" tab: "MediCare" is now tracked under "Contacted".
+
+
+================================================================================
+TEST SCENARIO 7: TWO-WAY REAL-TIME MESSAGING
+================================================================================
+1. Sign out and log back into the Student Founder account.
+2. Scroll to "Investor Inquiries" on the Student Studio.
+3. Locate the outreach from Pintu Capital and tap "Reply Now".
+4. Type your reply: "Thank you! We are excited to connect for a demo call."
+5. Tap Send.
+6. Switching back to the Investor account reveals the real-time reply,
+   and the deal status updates to "Replied / Meeting".
+
+
+================================================================================
+TEST SCENARIO 8: COMPLIANCE, PRIVACY & COPYRIGHT VERIFICATION
+================================================================================
+1. Exact Copyright Verification:
+   - Confirm "2026 copyright Child Chiller Ventures" is clearly displayed on:
+     * Splash Screen (under tagline and in bottom bar)
+     * Role Gate Screen (under welcome title and in bottom bar)
+     * Student Founder Studio (bottom navigation bar and list end)
+     * Investor Studio & Pipeline (bottom navigation bar)
+     * Admin Portal (bottom navigation bar)
+
+2. Aadhaar Privacy Verification:
+   - Any 12-digit number spoken or typed is automatically masked to:
+     XXXX-XXXX-1234
+   - Raw Aadhaar is NEVER stored in Firestore (verified via AadhaarCrypto).
+
+3. Least-Privilege GitHub Verification:
+   - Public repositories are fetched using the public GitHub REST API.
+   - Zero private user tokens or excessive OAuth write scopes are requested.
+================================================================================
