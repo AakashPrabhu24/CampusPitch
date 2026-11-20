@@ -43,7 +43,7 @@ CampusPitch is a production-grade native Android application (Kotlin + Jetpack C
 
 ## 🛠️ Building & Running
 
-### 1. Run Unit Tests (23/23 Passing)
+### 1. Run Unit Tests (41/41 Passing)
 ```bash
 .\gradlew.bat test
 ```
@@ -52,13 +52,23 @@ CampusPitch is a production-grade native Android application (Kotlin + Jetpack C
 ```bash
 .\gradlew.bat assembleDebug
 ```
-The APK is copied to: `C:\Users\ADMIN\Desktop\CampusPitch-Firebase-Connected.apk`
+The APK is located at: `releases/CampusPitch-Debug-v1.0.6.apk`
 
 ### 3. Build Production Signed Google Play Bundle (AAB)
 ```bash
 .\gradlew.bat bundleRelease
 ```
-The production bundle is generated at: `C:\Users\ADMIN\Desktop\CampusPitch-Release-v1.0.0.aab`
+The production bundle is generated at: `releases/CampusPitch-Release-v1.0.6.aab`
+
+---
+
+## 📚 Project Documentation
+Detailed specifications and operational manuals are organized in `docs/`:
+- **[System Architecture](docs/ARCHITECTURE.md)**: Technical design, Firestore schemas, audio streaming pipeline, and crypto hashing.
+- **[Evaluation & Testing Guide](docs/DEVELOPER_TESTING_GUIDE.txt)**: Step-by-step walkthrough for evaluating founder and investor flows.
+- **[Demo Walkthrough Script](docs/DEMO_SCRIPT.md)**: Live 3-minute evaluation script.
+- **[Play Store Compliance Kit](docs/PLAY_STORE_LISTING_AND_COMPLIANCE.md)**: Store listing copy, target audience, and safety declarations.
+- **[Privacy Policy](docs/PRIVACY_POLICY.md)**: Compliance and data retention documentation.
 
 ---
 

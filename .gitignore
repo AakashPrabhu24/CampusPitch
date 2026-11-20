@@ -1,12 +1,17 @@
-*.iml
-.gradle
-/local.properties
-/.idea
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
-local.properties
+# Gradle & Build cache
+.gradle/
 build/
 app/build/
+
+# Local environment & credentials
+local.properties
+
+# IDE & Editor configuration
+*.iml
+.idea/
+.kotlin/
+.DS_Store
+Thumbs.db
+captures/
+.externalNativeBuild/
+.cxx/
